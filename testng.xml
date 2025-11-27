@@ -1,39 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<!--<suite name="All Test Suite">-->
+<suite name="All Test Suite">
 
 
-<!--    &lt;!&ndash; Optional: Remove groups if not using &ndash;&gt;-->
-<!--    <groups>-->
-<!--        <run>-->
-<!--            <include name="Purchase"/>-->
-<!--        </run>-->
-<!--    </groups>-->
-<!--    <listeners>-->
-<!--        <listener class-name="testcomponents.Listeners"/>-->
-<!--    </listeners>-->
-
-<!--    <test name="Regression Tests" thread-count="2" preserve-order="true" verbose="2">-->
-<!--        <classes>-->
-<!--            <class name="tests.ErrorValidation">-->
-<!--                <methods>-->
-<!--                    <include name="loginErrorValidation"/>-->
-<!--                    <include name="ProductErrorValidation"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--</suite>-->
-<suite name ="MySuite" parallel="tests" thread-count ="8" verbose="1">
+    <!-- Optional: Remove groups if not using -->
     <groups>
         <run>
-            <include name="smoke"/>
+            <include name="Purchase"/>
         </run>
     </groups>
-    <parameter name="browser" value="chrome"/>
-    <test name = "Test1">
+    <listeners>
+        <listener class-name="testcomponents.Listeners"/>
+    </listeners>
+
+    <test name="Regression Tests" thread-count="2" preserve-order="true" verbose="2">
         <classes>
-            <class name="tests.ErrorValidation"/>
+            <class name="tests.ErrorValidation">
+                <methods>
+                    <include name="loginErrorValidation"/>
+                    <include name="ProductErrorValidation"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
